@@ -1,0 +1,11 @@
+{
+    "name": "News-site Link Replacer",
+    "version":"1.0",
+    "description": "Replace links to news articles from user defined websites to other sites.",
+    "manifest_version":2,
+    "permissions": ["storage"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+      }
+}
