@@ -5,7 +5,13 @@
     "manifest_version":2,
     "permissions": ["storage"],
     "background": {
-        "scripts": ["background.js"],
+        "scripts": ["jquery.js","jquery.js"],
         "persistent": false
-      }
+      },
+      "content_scripts": [
+        {
+          "matches": ["http://www.google.co.uk/*","file:///C:/Users/UKGC-PC/Documents/avoidNews/newsLinkReplacer/exampleSite.html"], 
+          "js": ["jquery.js","link_replacer.js"]
+        }
+      ]
 }
