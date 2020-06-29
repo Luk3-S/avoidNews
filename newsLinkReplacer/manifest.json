@@ -10,7 +10,7 @@
       },
       "content_scripts": [
         {
-          "matches": ["http://www.google.co.uk/*","file:///C:/Users/UKGC-PC/Documents/avoidNews/newsLinkReplacer/exampleSite.html"], 
+          "matches": ["https://*/*","file:///C:/Users/UKGC-PC/Documents/avoidNews/newsLinkReplacer/exampleSite.html"], 
           "js": ["jquery.js","link_replacer.js"]
         }
       ]
