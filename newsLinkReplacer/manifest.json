@@ -3,7 +3,7 @@
     "version":"1.0",
     "description": "Replace links to news articles from user defined websites to other sites.",
     "manifest_version":2,
-    "permissions": ["storage"],
+    "permissions": ["storage","declarativeContent"],
     "background": {
         "scripts": ["jquery.js","jquery.js"],
         "persistent": false
@@ -13,5 +13,12 @@
           "matches": ["https://*/*","file:///C:/Users/UKGC-PC/Documents/avoidNews/newsLinkReplacer/exampleSite.html"], 
           "js": ["jquery.js","link_replacer.js"]
         }
-      ]
+      ],
+
+
+  "options_page":"options.html",  
+  "browser_action":{
+    "default_popup":"popup.html"
+    }
+  
 }
