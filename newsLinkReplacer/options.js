@@ -19,14 +19,18 @@ function update(url_list, option) {
     const index = url_list.indexOf(url);
 
     if (option == "Add") {
-        var present = true;
-        if (index == -1) {
-            present = false;
-            if (url.length > 0) {
-                url_list.push(url);
+        if (url != "") {
+            var present = true;
+            if (index == -1) {
+                present = false;
+                if (url.length > 0) {
+                    url_list.push(url);
+                }
             }
+            divContent = present ? url + " is already on the list of avoided sites." : url + " has been added to list of avoided sites.";
+        } else {
+            divContent = "You cannot add an empty string to the list. Try again"
         }
-        divContent = present ? url + " is already on the list of avoided sites." : url + " has been added to list of avoided sites.";
     } else {
         if (index > -1) {
             url_list.splice(index, 1);
@@ -47,5 +51,5 @@ function update(url_list, option) {
     });
 }
 
-document.getElementById('saveAddition').addEventListener('click', getUrls.bind(null, "add")); 
+document.getElementById('saveAddition').addEventListener('click', getUrls.bind(null, "add"));
 document.getElementById('saveRemoval').addEventListener('click', getUrls.bind(null, "remove"));
