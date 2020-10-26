@@ -2,23 +2,23 @@
 <html>
 
 <head>
-        <h5> SiteReplacer!</h5>
-        <link rel = "stylesheet" href="popup.css" ></link>
-        
+    <h5> SiteReplacer!</h5>
+    <link rel="stylesheet" href="popup.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
 
-    <div class = "tab">
-        <button id="linksButton" class="tabLinks" >Replaced Links</button>
-        <button id="optionsButton" class = "tabLinks" >Options</button>
+    <div class="tab">
+        <button id="linksButton" class="tabLinks">Replaced Links</button>
+        <button id="optionsButton" class="tabLinks">Options</button>
     </div>
 
-    
-    
 
 
-    
+
+
+
 
     <div id="replacedLinks" class="tabContent">
         <h5>Found some links to replace those found on this webpage!</h5>
@@ -26,43 +26,43 @@
     </div>
 
     <div id="optionsPage" class="tabContent">
+
+
+
+
+        <div id="Header Message" class="optionsPageContent">
+            <h5>Sites that you are currently avoiding:</h5>
+        </div>
+        <div id="siteListDiv"></div>
+
+        
        
-            
+
+     
+        <br>
+
+        <div class = "updateForm" id="urlUpdateForm">
+                <label for="textInput">Enter a URL to save or remove it:</label><br>
+                <input type="text" id="textInput"></input><br>
+                <br>
+                <button id="saveAddition">Save </button>
+                <button id="saveRemoval">Remove </button>
+           
+        </div>
+
+
+        <div id="updateMsg">
+
+        </div>
 
         
-            <div id = "Header Message">
-            Sites that you are currently avoiding:
-            </div>
-            <div id ="siteListDiv"></div>
-
-            <div id = "helpMsg">
-                Use the below fields to add and remove sites from the list!
-            </div>
-            <div id="urlAddForm">
-                <input type = "text" id="textInputAdd"></input>
-                <button id="saveAddition">Click to save url</button>
-            </div>
-            
-            <div id = "Add">
-    
-            </div>
-    
-            <div id="urlRemoveForm">
-                <input type = "text" id="textInputRemove"></input>
-                <button id="saveRemoval">Click to remove url</button>
-            </div>
-    
-    
-            <div id = "Remove">
-    
-            </div>
-        
-        <script src="options.js"></script>
     </div>
 
-    
+
     <script src="popup.js"></script>
-    
+    <script src="options.js"></script>
+
+
 </body>
 
 </html>

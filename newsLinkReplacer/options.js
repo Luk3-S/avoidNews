@@ -3,7 +3,7 @@ function getUrls(arg) {
     chrome.storage.sync.get({
         sites_to_replace: []
     }, function (data) {
-        if (arg == "add") {
+        if (arg == "Add") {
             update(data.sites_to_replace, "Add");
         } else {
             update(data.sites_to_replace, "Remove");
@@ -12,12 +12,12 @@ function getUrls(arg) {
 }
 
 function update(url_list, option) {
-    var elId = "textInput" + option;
+    var elId = "textInput"; //+ option;
     var url = document.getElementById(elId).value;
-    var divTarget = document.getElementById(option);
+    var divTarget = document.getElementById("updateMsg");
     var divContent = "";
     const index = url_list.indexOf(url);
-
+    console.log("option: " + option)
     if (option == "Add") {
         if (url != "") {
             var present = true;
@@ -49,7 +49,28 @@ function update(url_list, option) {
             document.getElementById(elId).value = "";
         }, 1500);
     });
+
+    updateList();
+
 }
 
-document.getElementById('saveAddition').addEventListener('click', getUrls.bind(null, "add"));
-document.getElementById('saveRemoval').addEventListener('click', getUrls.bind(null, "remove"));
+function updateList() {
+    console.log("hrer")
+    chrome.storage.sync.get('sites_to_replace', function (data) {
+        $.ajax({
+            data: data.sites_to_replace,
+            success: function (result) {
+                console.log("data: " + data.sites_to_replace);
+                $("#siteListDiv").html(initList(data.sites_to_replace));
+            }
+        });
+    });
+}
+
+
+
+
+
+
+document.getElementById('saveAddition').addEventListener('click', getUrls.bind(null, "Add"));
+document.getElementById('saveRemoval').addEventListener('click', getUrls.bind(null, "Remove"));
